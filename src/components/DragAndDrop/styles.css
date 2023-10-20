@@ -1,0 +1,55 @@
+.list {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+.item {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  will-change: transform;
+  background: white;
+  color: #001d29;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px -1px #001d2910, 0 2px 4px -2px #001d2910;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.item.is-idle {
+  transition: .25s ease transform;
+}
+
+.item.is-idle .drag-handle {
+  cursor: grab;
+}
+
+.item.is-draggable,
+.item.is-draggable .drag-handle {
+  cursor: grabbing;
+}
+
+.item.is-draggable {
+  z-index: 10;
+}
+
+.drag-handle {
+  position: absolute;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drag-handle::after {
+  content: '⠿';
+  font-size: 25px; 
+  color: #000099
+}
